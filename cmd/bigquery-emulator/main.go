@@ -128,7 +128,7 @@ func runServer(args []string, opt option) error {
 	done := make(chan error)
 	go func() {
 		httpAddr := fmt.Sprintf("%s:%d", opt.Host, opt.HTTPPort)
-		httpsAddr := fmt.Sprintf("%s:%d", opt.HTTPSPort)
+		httpsAddr := fmt.Sprintf("%s:%d", opt.Host, opt.HTTPSPort)
 		grpcAddr := fmt.Sprintf("%s:%d", opt.Host, opt.GRPCPort)
 		fmt.Fprintf(os.Stdout, "[bigquery-emulator] REST server listening at %s\n", httpAddr)
 		fmt.Fprintf(os.Stdout, "[bigquery-emulator] REST HTTPS server listening at %s\n", httpsAddr)
